@@ -1,0 +1,10 @@
+main: me.ebarnett.GameLogic
+name: Game
+version: 1.0
+commands:
+  flip:
+    description: Flips
+  join:
+    description: Joins
+  leave:
+    description: Leaves
