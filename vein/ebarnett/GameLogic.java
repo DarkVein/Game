@@ -1,4 +1,4 @@
-package me.ebarnett;
+package vein.ebarnett;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +59,7 @@ public class GameLogic extends JavaPlugin implements Listener {
 	}
 	
 	@EventHandler
-	public void onFlickLever(PlayerInteractEvent e) {
+	public void onClickSign(PlayerInteractEvent e) {
 		Player player = (Player) e.getPlayer();
 		if (e.getAction().equals(Action.RIGHT_CLICK_BLOCK) && arena.contains(player.getName())) {
 			if(e.getClickedBlock().getType() == Material.SIGN || e.getClickedBlock().getType() == Material.SIGN_POST || e.getClickedBlock().getType() == Material.WALL_SIGN) {
@@ -84,6 +84,8 @@ public class GameLogic extends JavaPlugin implements Listener {
 		}
 	}
 	
+	//Don't want player to open chest will in arena ArrayList.....
+	
 	@SuppressWarnings("deprecation")
 	public void CancelOutChest(int Y, int X, int Z, Player player) {
 		player.setHealth(0);
@@ -102,6 +104,7 @@ public class GameLogic extends JavaPlugin implements Listener {
 		  }
 	  }
 	
+	//Dramatic Effects :P
 	  public void Frozen() {
 	        BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
 	        scheduler.scheduleSyncRepeatingTask(this, new Runnable() {
@@ -143,6 +146,7 @@ public class GameLogic extends JavaPlugin implements Listener {
 		}
 	}
 	
+	//Unecessary (Planning to Fix)
 	public void RandomBadDecision(Player player) {
 		String output = null;
 		switch (this.random.nextInt(3)) {
